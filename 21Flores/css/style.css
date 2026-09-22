@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #08080a;
+    --charcoal: #151518;
+    --gray: #aaa5a3;
+    --light: #e5dfd7;
+    --burgundy: #5a2028;
+    --red: #842832;
+    --yellow: #f1d24a;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+
+    color: var(--light);
+
+    background:
+        radial-gradient(
+            circle at center,
+            #19191d 0%,
+            #0d0d10 45%,
+            #050506 100%
+        );
+
+    font-family: 'Poppins', sans-serif;
+}
+
+/* textura oscura */
+
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.015) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.015) 1px,
+            transparent 1px
+        );
+
+    background-size: 4px 4px;
+
+    opacity: 0.18;
+    pointer-events: none;
+}
+
+/* fecha */
+
+.date {
+    position: absolute;
+    top: 35px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 0.95rem;
+    letter-spacing: 7px;
+
+    color: #8e8987;
+
+    animation: appear 2s ease forwards;
+}
+
+/* titulo */
+
+.greetings {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 6rem;
+    font-weight: 500;
+
+    letter-spacing: 12px;
+
+    color: var(--light);
+
+    z-index: 2;
+}
+
+.greetings > span {
+    animation: letterGlow 3s ease-in-out infinite;
+}
+
+/* pequeño brillo borgoña */
+
+@keyframes letterGlow {
+
+    0%, 100% {
+        color: var(--light);
+
+        text-shadow:
+            0 0 4px rgba(229,223,215,0.2),
+            0 0 18px rgba(90,32,40,0.15);
+    }
+
+    50% {
+        color: #ffffff;
+
+        text-shadow:
+            0 0 5px rgba(255,255,255,0.35),
+            0 0 25px rgba(90,32,40,0.45);
+    }
+}
+
+.greetings > span:nth-child(2) {
+    animation-delay: .15s;
+}
+
+.greetings > span:nth-child(3) {
+    animation-delay: .30s;
+}
+
+.greetings > span:nth-child(4) {
+    animation-delay: .45s;
+}
+
+.greetings > span:nth-child(5) {
+    animation-delay: .60s;
+}
+
+.greetings > span:nth-child(6) {
+    animation-delay: .75s;
+}
+
+.greetings > span:nth-child(7) {
+    animation-delay: .90s;
+}
+
+.greetings > span:nth-child(8) {
+    animation-delay: 1.05s;
+}
+
+.greetings > span:nth-child(9) {
+    animation-delay: 1.20s;
+}
+
+/* subtitulo */
+
+.description {
+    margin-top: 8px;
+
+    font-size: 1.05rem;
+    letter-spacing: 5px;
+
+    color: #aaa5a3;
+
+    z-index: 2;
+}
+
+/* frase */
+
+.intro {
+    margin-top: 22px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 1.15rem;
+    font-style: italic;
+
+    color: #777274;
+
+    letter-spacing: 1px;
+
+    z-index: 2;
+}
+
+/* boton */
+
+.button {
+    margin-top: 35px;
+    z-index: 2;
+}
+
+.botones {
+    background: transparent;
+    border: none;
+}
+
+.botones a {
+    display: inline-block;
+
+    padding: 12px 28px;
+
+    text-decoration: none;
+
+    font-size: 0.82rem;
+    letter-spacing: 3px;
+
+    color: var(--light);
+
+    background: #17171b;
+
+    border: 1px solid #3d2529;
+
+    border-radius: 3px;
+
+    transition: all 0.4s ease;
+
+    box-shadow:
+        0 0 0 rgba(132,40,50,0);
+}
+
+.botones a span {
+    margin-left: 8px;
+
+    color: var(--yellow);
+
+    transition: transform 0.3s ease;
+}
+
+.botones a:hover {
+    background: #21191b;
+
+    border-color: var(--red);
+
+    box-shadow:
+        0 0 15px rgba(132,40,50,0.25),
+        inset 0 0 12px rgba(132,40,50,0.08);
+}
+
+.botones a:hover span {
+    display: inline-block;
+    transform: translateX(5px);
+}
+
+/* nota inferior */
+
+.footer-note {
+    position: absolute;
+    bottom: 28px;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 2px;
+
+    color: #4f4b4c;
+
+    text-transform: lowercase;
+}
+
+/* entrada */
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* celulares */
+
+@media screen and (max-width: 600px) {
+
+    .date {
+        top: 25px;
+        font-size: 0.75rem;
+        letter-spacing: 4px;
+    }
+
+    .greetings {
+        font-size: 3.5rem;
+        letter-spacing: 5px;
+    }
+
+    .description {
+        font-size: 0.78rem;
+        letter-spacing: 3px;
+        text-align: center;
+    }
+
+    .intro {
+        padding: 0 25px;
+
+        font-size: 1rem;
+
+        text-align: center;
+    }
+
+    .botones a {
+        padding: 11px 22px;
+        font-size: 0.75rem;
+    }
+
+    .footer-note {
+        font-size: 0.55rem;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+}
